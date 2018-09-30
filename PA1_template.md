@@ -1,8 +1,8 @@
 ---
-title: "Reproducible Research Course Project 1"
-author: "Xinyang Wang"
-date: "9/28/2018"
-output: html_document
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
 ---
 
 ## Loading and processing the data
@@ -21,7 +21,7 @@ day <- aggregate(steps ~ date, data, sum)
 hist(day$steps, xlab = "Steps", main = "Histogram of Total Steps Per Day")
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 Calculate the mean and median of total number of steps per day:
 
@@ -40,7 +40,7 @@ intMean <- aggregate(steps ~ interval, data, mean)
 plot(intMean$interval, intMean$steps, type = "l", xlab = "Intervals", ylab = "Average Steps", main = "Average Steps Taken of Each Interval")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 Find the the interval that have the maximum number of steps:
 
@@ -89,7 +89,7 @@ dayNew <- aggregate(steps ~ date, dataImputed, sum)
 hist(dayNew$steps, xlab = "Steps", main = "Total Steps Per Day with Filled Missing Value")
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 Calculate the mean and median of total number of steps per day:
 
@@ -132,4 +132,4 @@ plot(intMean$interval, intMeanWeekday, type = "l", xlab = "Steps", ylab = "Inter
 plot(intMean$interval, intMeanWeekend, type = "l", xlab = "Steps", ylab = "Interval", main = "weekend")
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
